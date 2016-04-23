@@ -4,8 +4,8 @@ Using Raspberry Pi's to build a self-organising camera network for photographing
 ## Goal
 
 If you know me then you're probably aware of my experiments with 360° rotational imaging. The idea here is to take it to 
-the next level by having multiple synchronized cameras instead of a single camera with a subject being rotated by 
-a turntable.
+the next level by having multiple synchronized cameras arrayed around a space or subject, rather than a single camera with
+a subject being rotated by a turntable.
 
 ## Abstract
 
