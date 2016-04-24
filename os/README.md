@@ -67,3 +67,15 @@ Start by shutting down the Pi (with `shutdown`) and removing the media.
 If you have 2 separate means of accessing MicroSD cards on your computer this will be easier because you can use `dd` to dump straight from the one we just made to a fresh one. Otherwise, you'll have to extract an image from the card we just configured and use that; so make sure you have enough free space for the entire size of the media (even thought it's mostly empty!)
 
 [...more to come...]
+
+## In the interim...
+
+The coordinator will need to have its access point manually started:
+
+```
+sudo hostapd /etc/hostapd/hostapd.conf
+```
+
+## TODO 
+
+Lots and lots!
