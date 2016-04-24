@@ -22,6 +22,7 @@ Go to the terminal:
 diskutil list                         # See which disk has the SD media and use that for the next step
 sudo diskutil unmountDisk /dev/disk1  # Replace disk1 with the target disk - unmount disk rather than partition
 sudo dd bs=1m if=<path_to>/raspbian-jessie.img of=/dev/rdisk1   # Rdisk is raw disk, again, use the right one for your system
+sudo diskutil unmountDisk /dev/disk1  # Just in case
 ```
 
 This overwrites the contents of the entire media with Raspbian.
@@ -30,13 +31,15 @@ Remove the media (shouldn't have to eject since it's not mounted), put it in the
 connected to the internet, preferably via an ethernet cable as we'll be messing with the wireless. On the initial 
 boot it will go straight to the GUI.
 
-Log in as `pi` / `raspberry`, launch terminal and run the configurator:
-
+Launch the console and type
 ```
-raspi-config
+sudo raspi-config
 ```
 
-Set boot mode to "Console / no login" and then choose to expand the partition to fill the card. Reboot when asked.
+Choose option 3 - "Boot Options" and select option B1.
+You may wish to set your keyboard type via 5 - "Internationalisation Options" if you're not in the UK.
+Choose option 1 - "Expand Filesystem" to expand the partition to fill the card. 
+Choose "Finish" and reboot when asked.
 
 Once rebooted into the console, log back in as `pi` and execute these commands:
 
@@ -69,6 +72,9 @@ If you have 2 separate means of accessing MicroSD cards on your computer this wi
 [...more to come...]
 
 ## In the interim...
+
+As nice as it would be to have homogenous images, it's probably going to take some work.
+Quickest way to get this up and running is to bite the bullet and have a specific image for the coordinator.
 
 The coordinator will need to have its access point manually started:
 
